@@ -8,11 +8,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <p *ngIf = "persona.edad <25 "> {{persona.nombre}}</p>
   <p>{{persona.nombre}}</p>
   <p>{{usuario}}</p>
+
   <ion-item>
-    <ion-input label="nombre de usuario" labelPlacement="floating" placeholder="ingrese su nombre" [(ngModel)]="usuario"></ion-input>
+    <ion-input label="nombre de usuario" labelPlacement="floating" aria-placeholder="ingrese su nombre de usuario" [(ngModel)]="usuario"> </ion-input> 
   </ion-item>
+
+  <ion-item *ngFor="let personita of listaP">
+    <p>{{personita.id}} - {{personita.comuna | uppercase}}</p>
+  </ion-item>
+
   <ion-button color="success" [routerLink]="['/home']">Ir al Home</ion-button>
   <ion-button color="warning" (click)="irPagina()">Ir a Agregar</ion-button>
 </ion-content>
