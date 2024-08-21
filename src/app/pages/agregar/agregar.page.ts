@@ -18,8 +18,8 @@ export class AgregarPage implements OnInit {
       //valido si en la navegacion existe la variable de contexto
       if(this.router.getCurrentNavigation()?.extras.state){
         this.usuario = this.router.getCurrentNavigation()?.extras?.state?.['user'];
-        this.usuario = this.router.getCurrentNavigation()?.extras?.state?.['ed'];
-        this.usuario = this.router.getCurrentNavigation()?.extras?.state?.['ape'];
+        this.apellido = this.router.getCurrentNavigation()?.extras?.state?.['ed'];
+        this.edad = this.router.getCurrentNavigation()?.extras?.state?.['ape'];
       }
     })
 
