@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Inicio de Sesión{{apellido}}</ion-title>
@@ -22,4 +23,5 @@
 
   <ion-button color="success" [routerLink]="['/home']">Ir al Home</ion-button>
   <ion-button color="warning" (click)="irPagina()">Ir a Agregar</ion-button>
+  
 </ion-content>

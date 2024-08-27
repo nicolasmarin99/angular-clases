@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -42,9 +43,19 @@ export class LoginPage implements OnInit {
 
   
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private alertController: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async presentAlert(titulo:string,msj:string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: msj,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 
   irPagina(){
@@ -56,6 +67,8 @@ export class LoginPage implements OnInit {
         user: this.usuario
       }
     }
+
+    this.presentAlert('soy titulo','soy mensaje');
     //Puedo crear cualquier logica de programación
     this.router.navigate(['/agregar'], navigationextras);
   }
