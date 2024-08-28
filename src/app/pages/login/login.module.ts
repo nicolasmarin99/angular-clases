@@ -8,13 +8,15 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { Componente1Component } from 'src/app/components/componente1/componente1.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    MatProgressSpinnerModule
   ],
   declarations: [LoginPage,Componente1Component]
 })
